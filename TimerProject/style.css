@@ -1,0 +1,34 @@
+#timerValue{
+    position: absolute;
+    left : 140px;
+    top: 180px;
+    width: 250px;
+    border : none;
+    font-size: 100px;
+    outline-color: transparent
+
+}
+
+#start{
+    position: absolute;
+    border : none;
+    left : 220px;
+    top: 300px;
+    background: none;
+    
+
+}
+
+#pause{
+    position: absolute;
+    border : none;
+    left : 260px;
+    top: 300px;
+    background: none;
+
+}
+
+.fas fa-play {
+    height: 200px;
+    width: 100px;
+}
