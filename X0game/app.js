@@ -1,6 +1,7 @@
 class xoGame {
     constructor(root,cell){
         this.root = root;
+        this.count = 0;
         this.resetBut=document.querySelector(".reset");
         this.cell= cell;
         this.currentPlayer='p1';
@@ -22,9 +23,19 @@ class xoGame {
         this.initialize();
         this.multiArrayMaker();
         this.root.addEventListener("click",(e)=>{
-            this.markValue(this.currentPlayer,e.target.dataset);
+            this.count++;
+            console.log(this.count)
+            if(this.count ==(this.cell * this.cell)){
+                this.currentPlayerName.innerText="Oh no! Game Over!! Press Reset to Play Again!! "
+                return;
+                
+            }
+        this.markValue(this.currentPlayer,e.target.dataset);
+        
             if(this.winCheck()){
-                console.log(this.currentPlayer,"win");
+                
+                
+               
                 this.root.hidden= true;
                 if(this.currentPlayer=="p1"){
                     this.currentPlayerName.innerText="Player 1 Wins !! Press Reset to play again!!"
@@ -88,7 +99,7 @@ class xoGame {
     }
     markValue(player,val){
         const {codrow,codcol} = val;
-        console.log(codrow,codcol,player);
+       
         let tempElement = document.querySelector(`.entries${codrow}${codcol}`)
         if (player === "p1")
         {   this.p1CrossL = this.singleArrayMaker(this.cell);
@@ -247,7 +258,7 @@ class xoGame {
     gameReset(){
         this.root.hidden=false;
         this.root.innerHTML=" ";
-        
+        this.count=0;
         this.player1Text = "X";
         this.player2Text = "0";
        
@@ -269,4 +280,4 @@ class xoGame {
 
 
 const game = document.querySelector(".game");
-const game1 = new xoGame(game,6);
+const game1 = new xoGame(game,3);
