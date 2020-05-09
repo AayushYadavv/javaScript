@@ -280,4 +280,4 @@ class xoGame {
 
 
 const game = document.querySelector(".game");
-const game1 = new xoGame(game,3);
+const game1 = new xoGame(game,5);
